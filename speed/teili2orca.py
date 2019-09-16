@@ -21,7 +21,7 @@ import numpy as np
 import pickle
 import collections
 from brian2 import Network, Synapses, NeuronGroup
-from brain2 import SpikeGeneratorGroup, PoissonGroup
+from brian2 import SpikeGeneratorGroup, PoissonGroup
 
 from teili import TeiliNetwork, Connections, Neurons
 
