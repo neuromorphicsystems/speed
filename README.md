@@ -30,3 +30,33 @@ We need to grab the network object and extract the following information.
    *  Sign of the synapse
    *  Static vs. plastic
 *  Neuron & Synapse parameter dictionaries
+
+## Installation
+In order to specify networks you either need to install [brian2] or [teili].
+Both network descriptions work out of the box and can be converted to an
+ORCA friendly format. 
+
+At the this stage please make sure to set your `$PYTHONPATH` pointing to where you
+cloned the repository to. In the near future `speed` can be installed using pip.  
+
+## Tutorial
+For more detailed and functional example please refer to 
+`speed/tutorials/convert_network_tutoral.py`,
+You can find more tutorials at `speed/tutorials`.
+
+```python
+import os
+from teili2orca import Speed
+from teili import TeiliNetwork
+
+Net = TeiliNetwork()
+# Define your network
+
+Net.run(10*second, report='text')
+
+
+converted_model = Speed(Net)
+converted_model.print_network()
+converted_model.save_to_file(filename='orca_net.p',
+                             directory=os.path.expanduser('~'))
+```
