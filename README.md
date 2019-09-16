@@ -32,12 +32,12 @@ We need to grab the network object and extract the following information.
 *  Neuron & Synapse parameter dictionaries
 
 ## Installation
-In order to specify networks you either need to install [brian2] or [teili].
+In order to specify networks you either need to install [brian2](https://brian2.readthedocs.io/en/stable/introduction/install.html) or [teili](https://teili.readthedocs.io/en/latest/scripts/Getting%20started.html#installation).
 Both network descriptions work out of the box and can be converted to an
 ORCA friendly format. 
 
 At the this stage please make sure to set your `$PYTHONPATH` pointing to where you
-cloned the repository to. In the near future `speed` can be installed using pip.  
+cloned the repository to. In the near future `speed` can be installed using pip.
 
 ## Tutorial
 For more detailed and functional example please refer to 
