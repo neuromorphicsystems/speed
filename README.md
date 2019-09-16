@@ -46,7 +46,8 @@ You can find more tutorials at `speed/tutorials`.
 
 ```python
 import os
-from teili2orca import Speed
+
+from speed.teili2orca import Speed
 from teili import TeiliNetwork
 
 Net = TeiliNetwork()
