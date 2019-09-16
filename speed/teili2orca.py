@@ -26,7 +26,7 @@ from brain2 import SpikeGeneratorGroup, PoissonGroup
 from teili import TeiliNetwork, Connections, Neurons
 
 
-class teili2orca(TeiliNetwork, Network):
+class Speed(TeiliNetwork, Network):
     """This class provides the first iteration of a high-level
     interface to the ORCA Neuromorphic Signal Processor (NSP) developed
     at ICNS, Western Sydney University.
