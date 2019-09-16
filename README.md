@@ -61,3 +61,93 @@ converted_model.print_network()
 converted_model.save_to_file(filename='orca_net.p',
                              directory=os.path.expanduser('~'))
 ```
+
+When printing the network structure one expect an output similar to:
+```bash
+n_pop
+   test_WTA__n_exc :  50
+   test_WTA__n_inh :  12
+s_pop
+   test_WTA__s_exc_exc :  ['test_WTA__n_exc', 'test_WTA__n_exc']
+   test_WTA__s_exc_inh :  ['test_WTA__n_exc', 'test_WTA__n_inh']
+   noise_syn :  ['poissongroup', 'test_WTA__n_exc']
+   test_WTA__s_inp_exc :  ['test_WTA__spike_gen', 'test_WTA__n_exc']
+   test_WTA__s_inh_exc :  ['test_WTA__n_inh', 'test_WTA__n_exc']
+n_params
+   test_WTA__n_exc
+     Vthr :  -50.4 mV
+     EL :  -55. mV
+     Iexp :  0. A
+     Iconst :  0. A
+     Cm :  281. pF
+     Inoise :  0. A
+     gL :  4.3 nS
+     Iadapt :  0. A
+     Vres :  -70.6 mV
+     refP :  2. ms
+   test_WTA__n_inh
+     Vthr :  -50.4 mV
+     EL :  -55. mV
+     Iexp :  0. A
+     Iconst :  0. A
+     Cm :  281. pF
+     Inoise :  0. A
+     gL :  4.3 nS
+     Iadapt :  0. A
+     Vres :  -70.6 mV
+     refP :  2. ms
+s_total 2069
+n_total 62
+s_params
+   test_WTA__s_exc_exc
+     w_plast :  1
+     baseweight :  1. nA
+     kernel :  0. A s^-1
+     tausyn :  5. ms
+   test_WTA__s_exc_inh
+     w_plast :  1
+     baseweight :  1. nA
+     kernel :  0. A s^-1
+     tausyn :  5. ms
+   noise_syn
+     w_plast :  1
+     baseweight :  1. nA
+     kernel :  0. A s^-1
+     tausyn :  5. ms
+   test_WTA__s_inp_exc
+     w_plast :  1
+     baseweight :  1. nA
+     kernel :  0. A s^-1
+     tausyn :  5. ms
+   test_WTA__s_inh_exc
+     w_plast :  1
+     baseweight :  1. nA
+     kernel :  0. A s^-1
+     tausyn :  5. ms
+s_tags
+   test_WTA__s_exc_exc
+     plastic :  False
+     p_connection :  0.376
+     mean :  1.0
+     std :  0.0
+   test_WTA__s_exc_inh
+     plastic :  False
+     p_connection :  0.715
+     mean :  1.0
+     std :  0.0
+   noise_syn
+     plastic :  False
+     p_connection :  0.0004
+     mean :  1.0
+     std :  0.0
+   test_WTA__s_inp_exc
+     plastic :  False
+     p_connection :  0.02
+     mean :  1.0
+     std :  0.0
+   test_WTA__s_inh_exc
+     plastic :  False
+     p_connection :  1.0
+     mean :  1.0
+     std :  0.0
+```
