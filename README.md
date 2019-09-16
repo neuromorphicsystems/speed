@@ -1,2 +1,32 @@
-# speed
-A toolbox to convert teili or brian2 Spiking Neural Networks to the ORCA Neuromorphic Signal Processor for faster and large-scale simulation of cortical computation.
+# A compiler for ORCA a Neuromorphic Signal Processor
+This compiler will be used to program the ORCA neuromorphic processor using 
+a high level Network Descript Language (NDL) such as `brian2` or `teili`. 
+Ultimately we would like to build a proper backend. Before doing this I 
+would like to speak to James Knight and/or Thomas Nowotny as they developed 
+the `GeNN` backend. I believe it ultimately breaks down to a code generation 
+which converts the `brian2's` NDL into a c++/cuda code for `GeNN` and FPGA 
+code for `ORCA`.
+
+In the first iteration I will simply build a text generator function which 
+extracts all necessary information from a `TeiliNetwork` or `Network` 
+object, similar to `teili2ctxctl` as provided in [teili tools](https://code.ini.uzh.ch/ncs/teili/blob/dev-teili2ctxctl/teili/tools/teili2ctxctl.py).
+In contrast to the DYNAP interface `ORCA` needs more information about the
+`TeiliNetwork` as it has less limitations and higher flexibility and higher
+weight precision. A second important difference is that ORCA features on-chip 
+learning so we don't need to transfer learned weights, but rather the same 
+initialization parameters for the random distribution and the probability of
+connection, rather than exact indices.
+
+Ultimately, we can also provide equations to ORCA, but for now the model is
+inherently fixed, so that the teili2orca 1.0 focuses on connectivity and
+general NDL rather than equations.
+
+## teili2orca
+We need to grab the network object and extract the following information.
+*  Total number of neurons aka neuron count across population
+*  List/dict of neuron popluation
+*  Matching list/dict of population sizes
+*  List of populations (pre & post) which are connected via synapses
+   *  Sign of the synapse
+   *  Static vs. plastic
+*  Neuron & Synapse parameter dictionaries
