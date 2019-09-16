@@ -9,7 +9,7 @@ from teili.models.neuron_models import LinearLIF as neuron_model
 from teili.models.synapse_models import Exponential as static_synapse_model
 from teili.models.synapse_models import ExponentialStdp as plastic_synapse_model
 
-from teili2orca import Speed
+from speed.teili2orca import Speed
 
 # Defining the network
 N = 1000
