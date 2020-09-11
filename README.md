@@ -36,8 +36,14 @@ In order to specify networks you either need to install [brian2](https://brian2.
 Both network descriptions work out of the box and can be converted to an
 ORCA friendly format. 
 
-At the this stage please make sure to set your `$PYTHONPATH` pointing to where you
-cloned the repository to. In the near future `speed` can be installed using pip.
+To install `speed` simply clone the repository and use pip to install
+the module by pointing it to the folder containing the `setup.py`.
+```bash
+pip install speed/
+```
+
+Alternatively, you can set your `$PYTHONPATH` pointing to where you
+cloned the repository to.
 
 ## Tutorial
 For more detailed and functional example please refer to 
