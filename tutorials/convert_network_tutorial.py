@@ -1,7 +1,7 @@
 import os
 
 from brian2 import PoissonGroup
-from brian2 import Statemonitor, SpikeMonitor
+from brian2 import StateMonitor, SpikeMonitor
 from brian2 import Hz, second, ms
 
 from teili import Neurons, Connections, TeiliNetwork
